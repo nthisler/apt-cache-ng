@@ -1,4 +1,13 @@
-FROM        ubuntu
+# set base image
+FROM debian:latest 
+
+# author
+MAINTAINER Nathan Thisler
+
+# extra metadata
+LABEL version="1.0"
+
+LABEL description="Apt-Cacher-NG Docker v1.0"
 
 VOLUME ["/var/cache/apt-cacher-ng"]
 RUN apt-get update && apt-get install -y apt-cacher-ng
